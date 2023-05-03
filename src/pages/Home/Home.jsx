@@ -3,9 +3,11 @@ import { Carousel } from 'react-bootstrap';
 import img1 from '../../assets/1.jpg'
 import img2 from '../../assets/2.jpg'
 import img3 from '../../assets/3.jpeg'
+import Chefs from '../Blog/Chefs/Chefs';
 
 const Home = () => {
     return (
+       <>
         <Carousel>
         <Carousel.Item interval={1000}>
           <img
@@ -18,7 +20,7 @@ const Home = () => {
         
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item interval={500}>
+        {/* <Carousel.Item interval={500}>
           <img
             className="d-block w-100"
             src={img2}
@@ -29,7 +31,7 @@ const Home = () => {
             <p>This is a source of inspiration for creating sweet dessart menus.</p>
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item>
+        <Carousel.Item interval={500}>
           <img
             className="d-block w-100"
             src={img3}
@@ -41,8 +43,10 @@ const Home = () => {
             There are different starting recepies for creating your own recipe ideas to suit your customers' preferences and dietary requirements.
             </p>
           </Carousel.Caption>
-        </Carousel.Item>
+        </Carousel.Item> */}
       </Carousel>
+      <Chefs></Chefs>
+       </>
     );
 };
 
