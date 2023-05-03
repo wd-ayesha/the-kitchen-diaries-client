@@ -6,7 +6,7 @@ import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
 const Footer = () => {
     return (
 
-<div className="Container my-5">
+<div className="Container">
 
   <footer className="text-white text-center text-lg-start bg-dark">
    
