@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <Navbar fixed="top" bg="dark" expand="lg">
+        <Navbar sticky="top" bg="dark" expand="lg">
       <Container>
         <Navbar.Brand className='text-white fw-bold' href="#home">The Kitchen Diaries</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
