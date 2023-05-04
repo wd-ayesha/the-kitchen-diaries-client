@@ -4,7 +4,7 @@ import {
 import Main from "../Layouts/Main";
 import Home from "../pages/Home/Home";
 import Blog from "../pages/Blog/Blog";
-import ChefRecipesDetails from "../pages/ChefRecipesDetails/ChefRecipesDetails";
+import ChefDetails from "../pages/ChefDetails/ChefDetails";
 import Login from './../pages/Login/Login';
 import Register from './../pages/Register/Register';
 import PrivateRoute from "./PrivateRoute";
@@ -34,7 +34,7 @@ import PrivateRoute from "./PrivateRoute";
           path: ":id",
           element: (
             <PrivateRoute>
-               <ChefRecipesDetails></ChefRecipesDetails>,
+               <ChefDetails></ChefDetails>,
             </PrivateRoute>
           ),
         },

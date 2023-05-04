@@ -15,18 +15,18 @@ const Chefs = () => {
     <div>
       <Container>
         <h1>Our Chefs</h1>
-        <Card>
+        <Card className="border-0">
           <Card.Body>
             <Row>
               {chefs &&
                 chefs?.bangladeshi_chefs?.map((chef) => (
-                  <Col className="border" key={chef?.id} md={3}>
+                  <Col className="border" key={chef?.id} chef={chef} md={6} >
                     <Card.Img src={chef?.img_url} />
                     <Card.Title>{chef.name}</Card.Title>
                     <Card.Text>
                       <p>Years of experience: {chef.experience_years}</p>
                       <p>Numbers of recipes: {chef.num_recipes}</p>
-                      <p>Likes: {chef.rating}</p>
+                      <p>Likes: {chef.likes}</p>
                     </Card.Text>
                     <div className="mb-3">
                       <Link to={`/${chef?.id}`}>
@@ -38,18 +38,6 @@ const Chefs = () => {
             </Row>
           </Card.Body>
         </Card>
-        {/*     <ul>
-              {service?.items?.map((item) => (
-                <li key={item?.id}>
-                  {item?.name} - ${item?.price}
-                </li>
-              ))}
-            </ul> */}
-
-        {/*   <p>Duration: {chef?.ratings}</p>
-            <Link to={`/services/${chef?.id}`}>
-              <button>Details</button>
-            </Link> */}
       </Container>
 
     </div>
