@@ -8,7 +8,7 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
   console.log('login location', location)
-const from = location.state.from.pathname || '/'
+ const from = location.state?.from?.pathname || '/'
   
 
   const [email, setEmail] = useState("");
