@@ -8,6 +8,7 @@ const Register = () => {
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
+    // const [image, setImage] = useState(null);
     const [error, setError] = useState("");
   
     const handleRegistration = (event) => {
@@ -20,6 +21,7 @@ const Register = () => {
         registerUser(email, password)
           .then((result) => {
             console.log(result.user);
+            
           })
           .catch((err) => {
             console.log(err.message);
@@ -52,11 +54,11 @@ const Register = () => {
                     type="text"
                     placeholder="type your password"
                   /> <br />
-              <input
-                    className="image p-3 mb-3"
+              {/* <input
+              onChange={(e) => setImage(e.target.files[0])}
+                    className="p-3 mb-3"
                     type="file"
-                    placeholder="type your image"
-                  /> <br />
+                  /> <br /> */}
                 <button
                   onClick={handleRegistration}
                   className="btn btn-info w-25 p-2"
