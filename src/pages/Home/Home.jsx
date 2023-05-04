@@ -3,7 +3,8 @@ import { Carousel } from 'react-bootstrap';
 import img1 from '../../assets/1.jpg'
 import img2 from '../../assets/2.jpg'
 import img3 from '../../assets/3.jpeg'
-import Chefs from '../Blog/Chefs/Chefs';
+import Chefs from './../Home/Chefs/Chefs';
+
 
 const Home = () => {
     return (
@@ -20,7 +21,7 @@ const Home = () => {
         
           </Carousel.Caption>
         </Carousel.Item>
-        {/* <Carousel.Item interval={500}>
+        <Carousel.Item interval={500}>
           <img
             className="d-block w-100"
             src={img2}
@@ -43,9 +44,9 @@ const Home = () => {
             There are different starting recepies for creating your own recipe ideas to suit your customers' preferences and dietary requirements.
             </p>
           </Carousel.Caption>
-        </Carousel.Item> */}
+        </Carousel.Item>
       </Carousel>
-      <Chefs></Chefs>
+     <Chefs></Chefs>
        </>
     );
 };
