@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import { Container, Image, Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../provider/AuthProvider';
+import './Header.css'
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -20,21 +21,20 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Link className='text-decoration-none text-black ms-3 text-white' to="/">Home</Link>
-            <Link className='text-decoration-none text-black ms-3 text-white' to="/blog">Blog</Link>
-            <Link className='text-decoration-none text-black ms-3'><Image src={user?.img_url} roundedCircle /></Link>
-            {/* <Link className='text-decoration-none text-black ms-3 text-white' to="/login">Login</Link> */}
-
+            <NavLink className='text-decoration-none text-white ms-3' to="/">Home</NavLink>
+            <NavLink className='text-decoration-none text-white ms-3 ' to="/blog">Blog</NavLink>
+            <NavLink className='text-decoration-none ms-3'><img style={{height: '40px'}} src={user?.img_url} roundedCircle /></NavLink>
+        
             {user?.email ? (
          
-           <Link onClick={handleLogout} className='text-decoration-none text-black ms-3 text-white' to="/login">Logout
-           </Link>
+           <NavLink onClick={handleLogout} className='text-decoration-none text-white ms-3' to="/login">Logout
+           </NavLink>
         ) : (
-          <Link className='text-decoration-none text-black ms-3 text-white' to="/login">Login
-          </Link>
+          <NavLink className='text-decoration-none text-white ms-3' to="/login">Login
+          </NavLink>
         )}
        <li className='ms-3 text-white'>{user?.email}</li>
-            <Link className='text-decoration-none text-black ms-3 text-white' to="/register">Register</Link>
+            <NavLink className='text-decoration-none text-white ms-3' to="/register">Register</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

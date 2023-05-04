@@ -8,7 +8,7 @@ const Register = () => {
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
-    // const [image, setImage] = useState(null);
+    const [image, setImage] = useState(null);
     const [error, setError] = useState("");
   
     const handleRegistration = (event) => {
@@ -17,7 +17,7 @@ const Register = () => {
         setError("password not valid need 8 char ");
         return;
       }
-      if ((name, email, password)) {
+      if ((name, email, password, image)) {
         registerUser(email, password)
           .then((result) => {
             console.log(result.user);
@@ -54,11 +54,11 @@ const Register = () => {
                     type="text"
                     placeholder="type your password"
                   /> <br />
-              {/* <input
-              onChange={(e) => setImage(e.target.files[0])}
-                    className="p-3 mb-3"
-                    type="file"
-                  /> <br /> */}
+              <input
+              onChange={(e) => setImage(e.target.value)}
+                    className="p-3 w-75 mb-3"
+                    type="text" name='image' placeholder="type your image URL"
+                  /> <br />
                 <button
                   onClick={handleRegistration}
                   className="btn btn-info w-25 p-2"
