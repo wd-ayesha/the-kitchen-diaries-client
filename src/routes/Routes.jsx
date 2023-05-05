@@ -5,10 +5,10 @@ import Main from "../Layouts/Main";
 import Home from "../pages/Home/Home";
 import Blog from "../pages/Blog/Blog";
 import ChefDetails from "../pages/ChefDetails/ChefDetails";
-import Login from './../pages/Login/Login';
-import Register from './../pages/Register/Register';
 import PrivateRoute from "./PrivateRoute";
 import Error from './../pages/Error/Error';
+import Register from './../pages/Register/Register';
+import Login from "../pages/Login/Login";
 
   const router = createBrowserRouter([
     {
@@ -26,7 +26,7 @@ import Error from './../pages/Error/Error';
         },
         {
           path: "login",
-          element: <Login></Login>,
+          element: <Login></Login>
         },
         {
           path: "register",
