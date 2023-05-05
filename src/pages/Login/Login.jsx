@@ -1,14 +1,15 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { Link } from "react-router-dom";
-import { getAuth, signInWithPopup } from "firebase/auth";
+import { GithubAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 
 
 const Login = () => {
   const [user, setUser] = useState(null);
   const auth = getAuth(app);
-  const { loginUser, googleProvider } = useContext(AuthContext);
+  const { loginUser, googleProvider, githubProvider } = useContext(AuthContext);
+
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -31,6 +32,17 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+      })
+      .catch((error) => {
+        console.log("error", error.message);
+      });
+  };
+  const handleGithubSignIn = () => {
+    signInWithPopup(auth, githubProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        setUser(user)
       })
       .catch((error) => {
         console.log("error", error.message);
@@ -71,7 +83,8 @@ const Login = () => {
             >
               Login with Google
             </button>
-            <button className="btn btn-outline-info w-50 p-2 mb-4 ms-2">
+  
+            <button onClick={handleGithubSignIn} className="btn btn-outline-info w-50 p-2 mb-4 ms-2">
               Login with Github
             </button>
           </form>
@@ -79,7 +92,7 @@ const Login = () => {
             user && <div>
               <h3>User: {user.displayName}</h3>
               <p>Email: {user.email}</p>
-              <img src={user.photoURL} alt="" />
+              <img className="w-25 mb-4" src={user.photoURL} alt="" />
             </div>
           }
         </div>
