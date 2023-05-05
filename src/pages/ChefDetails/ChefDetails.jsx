@@ -12,8 +12,7 @@ const ChefDetails = () => {
         .then((res) => res.json())
         .then((data) => setDetails(data.item));
     }, []);
-  
-    console.log(id);
+    
     return (
         <div>
          {

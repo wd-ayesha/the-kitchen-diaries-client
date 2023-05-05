@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import ChefDetails from "../../ChefDetails/ChefDetails";
 
 const Chefs = () => {
   const [chefs, setChefs] = useState([]);
@@ -14,13 +15,13 @@ const Chefs = () => {
   return (
     <div>
       <Container>
-        <h1>Our Chefs</h1>
-        <Card className="border-0">
+        <h1 className="display-4 pt-4">Our Chefs</h1>
+        <Card className="border-0 py-4">
           <Card.Body>
             <Row>
               {chefs &&
                 chefs?.bangladeshi_chefs?.map((chef) => (
-                  <Col className="border" key={chef?.id} chef={chef} md={6} >
+                  <Col className="border" key={chef?.id} chef={chef} md={6}>
                     <Card.Img src={chef?.img_url} />
                     <Card.Title>{chef.name}</Card.Title>
                     <Card.Text>
@@ -39,7 +40,7 @@ const Chefs = () => {
           </Card.Body>
         </Card>
       </Container>
-
+      <ChefDetails></ChefDetails>
     </div>
   );
 };
