@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { Link } from "react-router-dom";
-import { GithubAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 
 
@@ -88,13 +88,13 @@ const Login = () => {
               Login with Github
             </button>
           </form>
-          {
+    {/*       {
             user && <div>
               <h3>User: {user.displayName}</h3>
               <p>Email: {user.email}</p>
               <img className="w-25 mb-4" src={user.photoURL} alt="" />
             </div>
-          }
+          } */}
         </div>
       </div>
     </div>

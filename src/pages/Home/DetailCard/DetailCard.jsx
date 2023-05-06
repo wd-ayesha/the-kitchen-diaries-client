@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Button, Card, Toast } from "react-bootstrap";
+import { Button, Card, Col, Image, Row, Toast } from "react-bootstrap";
 
 const DetailCard = ({ detail }) => {
-  const { id, name, ingredients, cooking_method, rating } = detail;
+  const { id, name, ingredients, cooking_method, rating, img } = detail;
   const [favourite, setFavourite] = useState(false);
   const [showToast, setShowToast] = useState(false);
 
@@ -13,7 +13,9 @@ const DetailCard = ({ detail }) => {
 
   return (
     <div className="container my-5">
-      <Card>
+      <Row>
+        <Col className="xs={8}">
+        <Card className="bg-secondary">
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>
@@ -21,14 +23,14 @@ const DetailCard = ({ detail }) => {
             <ul>
               {ingredients
                 .slice(0, 5)
-                .map((ingredient) => (
-                  <li key={ingredient?.index} className="d-inline">
+                .map((ingredient, index) => (
+                  <li key={index} className="d-inline">
                     {ingredient + " "}
                   </li>
                 ))}
             </ul>
           </Card.Text>
-          <Card.Text>Cooking Method: {cooking_method}</Card.Text>
+          <Card.Text><strong>Cooking Method: </strong>{cooking_method}</Card.Text>
           <Card.Text>Rating: {rating}</Card.Text>
           <Button
             onClick={handleFavourite}
@@ -39,6 +41,13 @@ const DetailCard = ({ detail }) => {
           </Button>
         </Card.Body>
       </Card>
+        </Col>
+        <Col className="xs={4} border p-4 text-center bg-secondary rounded">
+        <Image src={img} class="img-thumbnail" alt="Recipe Image" />
+        </Col>
+      </Row>
+      
+     
       <Toast
         show={showToast}
         onClose={() => setShowToast(false)}
@@ -54,6 +63,7 @@ const DetailCard = ({ detail }) => {
         </Toast.Header>
         <Toast.Body>Item added as favorite!</Toast.Body>
       </Toast>
+      
     </div>
   );
 };

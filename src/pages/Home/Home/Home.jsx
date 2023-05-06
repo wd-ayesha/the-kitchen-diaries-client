@@ -1,10 +1,11 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import img1 from '../../assets/1.jpg'
-import img2 from '../../assets/2.jpg'
-import img3 from '../../assets/3.jpeg'
-import Chefs from './../Home/Chefs/Chefs';
-import TwoSection from './TwoSection/TwoSection';
+import img1 from '../../../assets/1.jpg'
+import img2 from '../../../assets/2.jpg'
+import img3 from '../../../assets/3.jpeg'
+import TwoSection from '../TwoSection/TwoSection';
+import Chefs from '../Chefs/Chefs';
+
 
 
 const Home = () => {

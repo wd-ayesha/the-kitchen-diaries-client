@@ -2,13 +2,15 @@ import {
     createBrowserRouter
   } from "react-router-dom";
 import Main from "../Layouts/Main";
-import Home from "../pages/Home/Home";
+import Home from "../pages/Home/Home/Home";
 import Blog from "../pages/Blog/Blog";
-import ChefDetails from "../pages/ChefDetails/ChefDetails";
+
 import PrivateRoute from "./PrivateRoute";
 import Error from './../pages/Error/Error';
 import Register from './../pages/Register/Register';
 import Login from "../pages/Login/Login";
+import ChefDetails from "../pages/ChefDetails/ChefDetails";
+
 
   const router = createBrowserRouter([
     {
@@ -36,7 +38,7 @@ import Login from "../pages/Login/Login";
           path: ":id",
           element: (
             <PrivateRoute>
-               <ChefDetails></ChefDetails>,
+               <ChefDetails></ChefDetails>
             </PrivateRoute>
           ),
         },
