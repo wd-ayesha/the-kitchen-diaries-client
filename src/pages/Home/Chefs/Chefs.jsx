@@ -22,13 +22,13 @@ const Chefs = () => {
                 chefs?.bangladeshi_chefs?.map((chef) => (
                   <Col className="border pt-3 text-center bg-secondary bg-gradient text-white" key={chef?.id} chef={chef} md={6}>
                    <Card.Img className="h-50 w-50 img-thumbnail mb-2" src={chef?.img_url} />
-                    <Card.Title>{chef.name}</Card.Title>
+                    <Card.Title className="fs-2">{chef.name}</Card.Title>
                     <Card.Text>
-                      <p>Years of experience: {chef.experience_years}</p>
-                      <p>Numbers of recipes: {chef.num_recipes}</p>
-                      <p>Likes: {chef.likes}</p>
+                      Years of experience: {chef.experience_years} <br />
+                      Numbers of recipes: {chef.num_recipes} <br />
+                      Likes: {chef.likes}
                     </Card.Text>
-                    <div className="mb-2">
+                    <div>
                       <Link to={`/${chef?.id}`}>
                         <button className="btn btn-outline-danger">View Recipes</button>
                       </Link>

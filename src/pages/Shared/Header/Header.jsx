@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Image, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../../provider/AuthProvider";
 import "./Header.css";
@@ -33,7 +33,7 @@ const Header = () => {
               Blog
             </NavLink>
             <NavLink className="text-decoration-none ms-3">
-              <img
+              <Image
                 style={{ height: "40px" }}
                 src={user?.photoURL}
                 roundedCircle

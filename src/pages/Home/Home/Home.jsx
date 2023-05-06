@@ -20,7 +20,6 @@ const Home = () => {
           />
           <Carousel.Caption>
             <h3>Welcome to the Kitchen Diaries</h3>
-        
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={500}>

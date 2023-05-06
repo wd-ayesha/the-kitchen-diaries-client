@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Card, Col, Row } from "react-bootstrap";
+import ReactToPdf from "react-to-pdf";
 
 const Blog = () => {
+  const componentRef = useRef();
+
   return (
-    <div className="container py-5">
+    <div
+      ref={componentRef}
+      className="container py-5"
+    >
       <h2 className="text-center pb-3 fw-bold">Questions & Answers</h2>
       <Row xs={1} md={2} className="g-4">
         <Col>
@@ -84,7 +90,6 @@ const Blog = () => {
                   different roles in the web development stack.
                   <br />
                   <u>
-                    {" "}
                     Here are some key differences between Node.js and
                     Express.js:
                   </u>
@@ -144,6 +149,21 @@ const Blog = () => {
           </Card>
         </Col>
       </Row>
+      <div className="text-center mt-4">
+        <ReactToPdf
+          targetRef={componentRef}
+          filename="answer.pdf"
+          options={{
+            orientation: 'landscape',
+          }}
+        >
+          {({ toPdf }) => (
+            <button className="btn btn-outline-secondary" onClick={toPdf}>
+              Download pdf file
+            </button>
+          )}
+        </ReactToPdf>
+      </div>
     </div>
   );
 };
