@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import DetailCard from "./../Home/DetailCard/DetailCard";
 import { Card } from "react-bootstrap";
 import './ChefDEtails.css'
+import { AwesomeImage } from 'react-awesome-components';
+import LazyLoad from 'react-lazyload';
 
 const ChefDetails = () => {
   const { id } = useParams();
@@ -22,10 +24,12 @@ const ChefDetails = () => {
   return (
     <>
       <Card className="container pt-5 bg-info">
-        <Card.Img
-          variant="top"
-          className="chef-img" src={chefDetails?.img_url}
+        <LazyLoad height={200} once>
+        <AwesomeImage className="chef-img"
+          src={chefDetails?.img_url}
+          alt="Chef Image"
         />
+      </LazyLoad>
         <Card.Body className="">
           <Card.Title className="display-3 text-center"> {chefDetails?.name}</Card.Title>
           <Card.Text className="fs-4">
