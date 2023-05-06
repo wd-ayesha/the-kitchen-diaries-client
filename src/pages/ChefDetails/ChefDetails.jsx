@@ -3,12 +3,10 @@ import { useParams } from "react-router-dom";
 import DetailCard from "./../Home/DetailCard/DetailCard";
 import { Card } from "react-bootstrap";
 import './ChefDEtails.css'
-import { AwesomeImage } from 'react-awesome-components';
-import LazyLoad from 'react-lazyload';
 
 const ChefDetails = () => {
   const { id } = useParams();
-  const [details, setDetails] = useState({});
+  const [recipeDetails, setRecipeDetails] = useState({});
   const [chefDetails, setChefDetails] = useState({});
 
   useEffect(() => {
@@ -16,7 +14,7 @@ const ChefDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setDetails(data.item);
+        setRecipeDetails(data.item);
         setChefDetails(data.item);
       });
   }, [id]);
@@ -24,12 +22,9 @@ const ChefDetails = () => {
   return (
     <>
       <Card className="container pt-5 bg-info">
-        <LazyLoad height={200} once>
-        <AwesomeImage className="chef-img"
-          src={chefDetails?.img_url}
-          alt="Chef Image"
-        />
-      </LazyLoad>
+        <Image className="chef-img" src={chefDetails?.img_url}
+          alt="Chef Image" />
+    
         <Card.Body className="">
           <Card.Title className="display-3 text-center"> {chefDetails?.name}</Card.Title>
           <Card.Text className="fs-4">
@@ -52,7 +47,7 @@ const ChefDetails = () => {
         </Card.Body>
       </Card>
       <div>
-        {details?.recipes?.map((detail, index) => (
+        {recipeDetails?.recipes?.map((detail, index) => (
           <DetailCard key={index} detail={detail}></DetailCard>
         ))}
       </div>
