@@ -29,7 +29,7 @@ const Register = () => {
           setError("Please enter your email and password");
           return;
         }
-        if (password.length < 6) {
+        else if (password.length < 6) {
           setError("Password must be at least 6 characters long");
           return;
         }
@@ -38,7 +38,7 @@ const Register = () => {
   return (
     <div>
       <div className="container">
-        <div className="border w-50 m-auto text-center my-5 pt-5 bg-secondary">
+        <div className="border w-50 m-auto text-center my-5 pt-5 bg-info">
           <p className="text-danger fs-5">{error}</p>
           <p className="text-success fs-5">{success}</p>
           <form onSubmit={handleRegistration}>
@@ -47,7 +47,7 @@ const Register = () => {
               type="text"
               name="name"
               placeholder="Enter your Name"
-              required
+              
             />
             <br />
             <input
@@ -55,7 +55,7 @@ const Register = () => {
               type="email"
               name="email"
               placeholder="Enter your email"
-              required
+             
             />
             <br />
             <input
@@ -63,7 +63,7 @@ const Register = () => {
               type="password"
               name="password"
               placeholder="Type your password"
-              required
+            
             />
             <br />
             <input
@@ -73,9 +73,9 @@ const Register = () => {
               placeholder="Enter your image URL"
             />
             <br />
-            <button className="btn btn-info w-25 p-2">Register</button> <br />
+            <button className="btn btn-outline-danger w-25 p-2">Register</button> <br />
             <p className="p-2">
-              <small className="text-info">
+              <small className="text-secondary">
                 Already have an account? Please <Link to="/login">Login</Link>
               </small>
             </p>
