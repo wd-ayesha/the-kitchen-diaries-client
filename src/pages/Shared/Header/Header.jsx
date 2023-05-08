@@ -35,7 +35,7 @@ const Header = () => {
             <NavLink className="text-decoration-none ms-3">
               <Image
                 style={{ height: "40px" }}
-                src={user?.photoURL}
+                src={user?.photoURL} title={user?.displayName}
                 roundedCircle
               />
             </NavLink>

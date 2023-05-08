@@ -21,7 +21,7 @@ const Chefs = () => {
               {chefs &&
                 chefs?.bangladeshi_chefs?.map((chef) => (
                   <Col className="border pt-3 text-center bg-secondary bg-gradient text-white" key={chef?.id} chef={chef} md={6}>
-                   <Card.Img className="h-50 w-50 img-thumbnail mb-2" src={chef?.img_url} />
+                   <Card.Img className="h-50 w-50 img-thumbnail mb-2" src={chef?.img_url} loading="lazy" alt="chef image" />
                     <Card.Title className="fs-2">{chef?.name}</Card.Title>
                     <Card.Text>
                       Years of experience: {chef?.experience_years} <br />
