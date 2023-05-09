@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 import './Login.css';
+import { FaGoogle, FaGithub } from 'react-icons/fa';
 
 const Login = () => {
   const [user, setUser] = useState(null);
@@ -92,11 +93,12 @@ const Login = () => {
             <button
               onClick={handleGoogleSignIn}
               className="btn btn-outline-danger w-50 p-2 mb-4"
-            >
+            > <FaGoogle className="me-2" />
               Login with Google
             </button>
   
             <button onClick={handleGithubSignIn} className="btn btn-outline-danger w-50 p-2 mb-4 ms-2">
+              <FaGithub className="me-2" />
               Login with Github
             </button>
           </form>

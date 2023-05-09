@@ -1,5 +1,6 @@
 import React from "react";
 import bgImg from "../../../assets/bg2.jpeg"
+import "./TwoSection.css"
 
 const TwoSection = () => {
   return (
@@ -8,17 +9,34 @@ const TwoSection = () => {
         <div className="card text-bg-dark rounded-0">
           <img
             src={bgImg}
-            className="card-img opacity-75 rounded-0 h-75"
+            className="card-img opacity-75 rounded-0 h-75 img-fluid"
             alt="..."
           />
-          <div className="card-img-overlay d-flex flex-column justify-content-center align-items-center container ">
-            <h2 className="card-title display-6 pt-2">
-              Excellent Services & Prices
+          <div className="card-img-overlay d-flex flex-column justify-content-center align-items-center container statBg">
+            <h2 className="card-title display-4 pt-2">
+            Statistics
             </h2>
             <p className="card-text fs-5 text-center">
-              Here you will dive into a friendly and romantic atmosphere and
-              enjoy our haute cuisine. <br /> With our great selection of dishes!
+              Here you will dive into a friendly and romantic atmosphere and enjoy our haute cuisine. <br /> With our great selection of dishes!
             </p>
+            <div class="row text-white d-flex justify-content-evenly pt-3 text-center">
+            <div class="col-md-3 border-light-subtle border-4 border stat me-3">
+              <h4 class="text-warning pt-5 fw-bolder">123</h4>
+              <p class="text-white text-uppercase">outlets</p>
+            </div>
+            <div class="col-md-3 border-light-subtle border-4 border stat me-3">
+              <h4 class="text-warning pt-5 fw-bolder">100</h4>
+              <p class="text-white text-uppercase">chefs</p>
+            </div>
+            <div class="col-md-3 border-light-subtle border-4 border stat me-3">
+              <h4 class="text-warning pt-5 fw-bolder">300</h4>
+              <p class="text-white text-uppercase">menus</p>
+            </div>
+            <div class="col-md-3 border-light-subtle border-4 border stat me-3">
+              <h4 class="text-warning pt-5 fw-bolder">30</h4>
+              <p class="text-white text-uppercase">country</p>
+            </div>
+          </div>
           </div>
         </div>
       </section>

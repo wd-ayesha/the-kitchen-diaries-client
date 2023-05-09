@@ -1,0 +1,15 @@
+.statBg{
+    background: #000000c5;
+    margin: 125px 95px;
+}
+.stat{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+@media only screen and (max-width: 600px){
+    .statBg{
+        visibility: hidden;
+    }
+}

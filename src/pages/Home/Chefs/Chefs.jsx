@@ -22,13 +22,13 @@ const Chefs = () => {
               {chefs &&
                 chefs?.bangladeshi_chefs?.map((chef) => (
                   <Col
-                    className="border pt-3 text-center chefBg bg-gradient text-white"
+                    className="border py-4 text-center chefBg bg-gradient text-white"
                     key={chef?.id}
                     chef={chef}
                     md={6}
                   >
                     <Card.Img
-                      className="h-50 w-50 img-thumbnail mb-2 mt-5"
+                      className="h-50 w-50 img-thumbnail mb-2 mt-3"
                       src={chef?.img_url}
                       loading="lazy"
                       alt="chef image"
@@ -39,7 +39,7 @@ const Chefs = () => {
                       Numbers of recipes: {chef?.num_recipes} <br />
                       Likes: {chef?.likes}
                     </Card.Text>
-                    <div>
+                    <div> 
                       <Link to={`/${chef?.id}`}>
                         <button className="btn btn-outline-danger">
                           View Recipes
