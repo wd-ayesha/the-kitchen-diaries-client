@@ -3,6 +3,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.config";
+import './Login.css';
 
 const Login = () => {
   const [user, setUser] = useState(null);
@@ -27,6 +28,7 @@ const Login = () => {
         console.log(loggedInUser);
         setUser(loggedInUser);
         form.reset();
+        setError('');
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -59,13 +61,13 @@ const Login = () => {
       });
   };
   return (
-    <div>
-      <div className="container">
-        <div className="border w-50 m-auto text-center my-5 pt-5 bg-info">
+    <div className="bg py-5">
+      <div className="container py-5">
+        <div className="border w-50 m-auto text-center rounded border-0 loginBg py-3">
           <p className="text-danger">{error}</p>
           <form onSubmit={handleLogin}>
             <input
-              className="p-3 w-75 mb-3"
+              className="p-3 w-75 mb-3 bg-transparent rounded"
               type="email"
               name="email"
               placeholder="Enter your email"
@@ -73,18 +75,18 @@ const Login = () => {
             />
             <br />
             <input
-              className="p-3 w-75 mb-3"
+              className="p-3 w-75 mb-3 bg-transparent rounded"
               type="password"
               name="password"
               placeholder="Type your password"
               required
             />
             <br />
-            <button className="btn btn-outline-danger w-25 p-2"><Link className="text-decoration-none">Login</Link></button> <br />
+            <button className="btn btn-outline-danger w-25 p-2">Login</button> <br />
             <p className="p-2">
-              <small className="text-dark">
+              <small className="text-secondary">
                 Don't have an account? Please 
-                <Link className="text-decoration-none" to="/register">Register</Link>
+                <Link className="ms-1 text-white" to="/register">Register</Link>
               </small>
             </p>
             <button

@@ -1,0 +1,11 @@
+.bg{
+    background-image: url(./../../assets/bangladeshi-cuisine.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.loginBg{
+    background: #000000bf;
+}
+input{
+    color: #fff;
+}
